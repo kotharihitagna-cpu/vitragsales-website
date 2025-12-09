@@ -30,16 +30,48 @@ body {
   height: 55px;
 }
 
+/* Desktop menu */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
 .nav-links a {
   text-decoration: none;
-  margin: 0 15px;
   font-weight: 500;
-  color: #004d4d; /* Teal shade */
+  color: #004d4d;
   transition: 0.3s;
 }
 
 .nav-links a:hover {
   color: #009999;
+}
+
+/* ======== HAMBURGER MENU ======== */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: #004d4d;
+  cursor: pointer;
+}
+
+/* Mobile menu hidden initially */
+.nav-links.mobile {
+  flex-direction: column;
+  position: absolute;
+  top: 75px;
+  right: 0;
+  width: 100%;
+  background: white;
+  padding: 15px 0;
+  display: none;
+  text-align: center;
+}
+
+.nav-links.mobile a {
+  display: block;
+  padding: 12px 0;
 }
 
 /* ========== HERO SECTION ========== */
@@ -113,4 +145,44 @@ footer {
   background: #003b3b;
   color: white;
   text-align: center;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 950px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar img {
+    height: 48px;
+  }
+
+  /* Show hamburger menu */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide desktop nav */
+  .nav-links {
+    display: none;
+  }
+
+  /* Hero text */
+  .hero h1 {
+    font-size: 33px;
+  }
+
+  .hero {
+    height: 75vh;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
 }
